@@ -1,4 +1,4 @@
-const bcrypt = require("../../../node_modules/bcryptjs/umd");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { User, Wallet } = require("../models");
 
@@ -9,7 +9,6 @@ const generateToken = (id) => {
 };
 
 exports.signup = async (req, res) => {
-  console.log(req.body);
   const { name, email, password } = req.body;
 
   try {
